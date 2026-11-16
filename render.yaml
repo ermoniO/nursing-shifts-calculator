@@ -1,0 +1,41 @@
+# Render Blueprint: creates the Postgres database and the web service together.
+# In Render: New > Blueprint > pick this GitHub repo.
+
+databases:
+  - name: nursing-shifts-db
+    databaseName: nursing_shifts
+    user: nsc
+    plan: free   # check Render's current free-tier limits; free databases may expire
+
+services:
+  - type: web
+    name: nursing-shifts-calculator
+    runtime: docker
+    plan: free
+    autoDeploy: true          # redeploys on every push to the connected branch
+    healthCheckPath: /api/health
+    envVars:
+      - key: APP_PASSWORD
+        sync: false           # Render asks you to enter this; it is never stored in the repo
+      - key: APP_TIMEZONE
+        value: America/Chicago
+      - key: DB_HOST
+        fromDatabase:
+          name: nursing-shifts-db
+          property: host
+      - key: DB_PORT
+        fromDatabase:
+          name: nursing-shifts-db
+          property: port
+      - key: DB_NAME
+        fromDatabase:
+          name: nursing-shifts-db
+          property: database
+      - key: DB_USER
+        fromDatabase:
+          name: nursing-shifts-db
+          property: user
+      - key: DB_PASSWORD
+        fromDatabase:
+          name: nursing-shifts-db
+          property: password

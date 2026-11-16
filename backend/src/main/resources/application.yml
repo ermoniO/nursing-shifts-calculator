@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: nursing-shifts-calculator
+  datasource:
+    url: jdbc:postgresql://${DB_HOST:localhost}:${DB_PORT:5432}/${DB_NAME:nursing_shifts}
+    username: ${DB_USER:nsc}
+    password: ${DB_PASSWORD:nsc}
+  jpa:
+    hibernate:
+      ddl-auto: none   # tables come from schema.sql
+    open-in-view: false
+  sql:
+    init:
+      mode: always     # runs schema.sql on startup (CREATE TABLE IF NOT EXISTS)
+
+server:
+  port: ${PORT:8080}   # Render sets PORT automatically
+
+app:
+  # The single password for the app. Required; startup fails if it is empty.
+  password: ${APP_PASSWORD:}
+  # Decides when a shift turns from Scheduled to Completed (after its date ends here).
+  timezone: ${APP_TIMEZONE:America/Chicago}
