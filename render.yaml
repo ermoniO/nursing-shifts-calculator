@@ -9,7 +9,7 @@ databases:
 
 services:
   - type: web
-    name: nursing-shifts-calculator
+    name: nurseshiftmanager
     runtime: docker
     plan: free
     autoDeploy: true          # redeploys on every push to the connected branch
