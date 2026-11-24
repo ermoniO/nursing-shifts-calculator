@@ -69,7 +69,7 @@ export default function App() {
             <span className="grid size-8 place-items-center rounded-lg bg-teal-700 text-sm font-bold text-white">
               $
             </span>
-            <h1 className="text-[15px] font-semibold tracking-tight">Nursing Shifts Calculator</h1>
+            <h1 className="text-[15px] font-semibold tracking-tight">Nurse Shift Manager</h1>
           </div>
           <nav className="hidden gap-1 sm:flex" aria-label="Views">
             {TABS.map((t) => (

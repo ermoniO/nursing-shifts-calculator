@@ -12,9 +12,9 @@
     </parent>
 
     <groupId>com.nursingshifts</groupId>
-    <artifactId>nursing-shifts-calculator</artifactId>
+    <artifactId>nurse-shift-manager</artifactId>
     <version>1.0.0</version>
-    <name>Nursing Shifts Calculator</name>
+    <name>Nurse Shift Manager</name>
     <description>Tracks PRN shifts against a monthly income goal</description>
 
     <properties>
@@ -47,7 +47,7 @@
     </dependencies>
 
     <build>
-        <finalName>nursing-shifts-calculator</finalName>
+        <finalName>nurse-shift-manager</finalName>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>

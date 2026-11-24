@@ -24,7 +24,7 @@ export default function Login({ onSignedIn }) {
     <div className="grid min-h-dvh place-items-center px-4">
       <form onSubmit={submit} className="w-full max-w-sm rounded-2xl bg-white p-7 shadow-sm ring-1 ring-stone-200">
         <span className="grid size-10 place-items-center rounded-xl bg-teal-700 text-lg font-bold text-white">$</span>
-        <h1 className="mt-5 text-xl font-semibold tracking-tight">Nursing Shifts Calculator</h1>
+        <h1 className="mt-5 text-xl font-semibold tracking-tight">Nurse Shift Manager</h1>
         <p className="mt-1 text-sm text-stone-500">Enter your password to continue.</p>
         <label className="mt-6 block text-sm font-medium" htmlFor="password">
           Password
